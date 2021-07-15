@@ -1,0 +1,30 @@
+<form class="form-wrapper">
+  <mat-form-field color="accent" appearance="fill">
+    <mat-label>Inherited calendar color</mat-label>
+    <input [max]="maxDate" (dateChange)="onDateChanged($event)" matInput [matDatepicker]="picker1" name="dateSelected"
+      id="dateSelected" [(ngModel)]="dateSelected">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+</form>
+
+<div *ngIf="loading; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <div class="center-wrapper">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <div *ngIf="error" class="center-wrapper">
+    <h4>Une erreur s'est produite</h4>
+  </div>
+  <div *ngIf="error == false" class="row">
+    <div class="products-wrapper">
+      <div class="wrapper">
+        <app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+      </div>
+    </div>
+    <!-- Pie chart -->
+    <app-pie [chartData]="pieChartData.data" [chartDataLabels]="pieChartData.labels"></app-pie>
+  </div>
+</ng-template>

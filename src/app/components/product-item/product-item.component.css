@@ -1,0 +1,39 @@
+.product-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid grey;
+  width: 65vw;
+}
+
+.product-details {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.product-other-details {
+  width: 100%;
+  display: flex
+}
+
+.product-title {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #333
+}
+
+.topics {
+  display: flex;
+}
+
+.product-other-details>p,
+.topic-name {
+  margin-right: 10px;
+  border: 1px solid grey;
+  padding: 5px 10px
+}

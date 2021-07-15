@@ -1,0 +1,20 @@
+<div *ngIf="product" class="product-wrapper">
+  <img  height="100" width="100"
+    src="{{product.thumbnail.image_url}}">
+  <div class="product-details">
+    <div class="product-title">
+      <a [href]="product.redirect_url">
+        {{product.name}}
+      </a>
+    </div>
+    <div class="product-description">
+      {{product.tagline}}
+    </div>
+    <div class="product-other-details">
+      <p> Comments: {{product.comments_count}} </p>
+      <div class="topics">
+        <p class="topic-name" *ngFor="let topic of product.topics"> {{topic.name}} </p>
+      </div>
+    </div>
+  </div>
+</div>
